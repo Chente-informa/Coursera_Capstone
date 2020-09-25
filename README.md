@@ -11,7 +11,7 @@ Anyone can reduce the risk of an accident when we can predict the accident condi
 Data that might contribute to determine the cause of accident with severity of personal injury or death needs to be better identified and a forecasting system could detect a risk area and condition.
 This project aims to predict severity risk and which condition (feature) will increase the risk.
 ### 1.3 Interest
-The French road safety body needs a system to assess the risk of an accident based on geographic location and other criteria that most affect the risk of an accident.
+The French road safety body needs a system to assess the risk of an accident based on geographic location and other criteria that most affect the risk of an accident. Insurance companies might be interested in using this model and features engineering to optimize thier coverage plans.
 
 ## 2. Data source and cleaning
 
