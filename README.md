@@ -17,15 +17,17 @@ The French road safety body needs a system to assess the risk of an accident bas
 
 ### 2.1 Data sources
 In France, data are shared in data.gouv.fr (FRANCE official open data).
-Between 2016 and 2018, we are more than 200 000 accident cases.
+https://www.data.gouv.fr/en/datasets/base-de-donnees-accidents-corporels-de-la-circulation/
+Between 2016 and 2017, we are more than 120 000 accident cases.
 ##### Target prediction
 There is characteristic information about accidents, locations, vehicles involved and victims.
 Accident severity is provided on 4 levels, which are unbalanced. Except that for our objective of preventing any accident with bodily impact, we can group the values 2, 3 and 4 in serious severity (death and injury) and 1 in material severity and data are correctly balanced.
 
 ### 2.2 Preprocessing
 Rows with too much missing data are dropped or if a column have too much nan value, it's not considerated like feature and dropped too.
-Value of date of accident is split into day of the week.
-Likewise, the encoding of the hour of the accident is a little less obvious than that of categorical variables. 24 corresponding categories will be considered at each hour of the day. For example, 00:20 corresponds to category 0. The pm 4:32 time corresponds to category 16 (if this feature will not appears important, it will be possible to double the spliting at 48 half-hours or more).
+Value of date of accident is split into day of the week (dayofweek column is created).
+Likewise, the encoding of the hour of the accident is a little less obvious than that of categorical variables. 24 corresponding categories will be considered at each hour of the day. For example, 00:20 corresponds to category 0. The pm 4:32 time corresponds to category 16 (if this feature will not appears important, it will be possible to double the spliting at 48 half-hours or more) - I replaced the hrmn column.
+15 regions are created with a K-means clustering of Latitude and Longitude - column geo was created.
 
 ### 2.3 Features engineering
 To optimize the training of the model, firstly, the correlation and variance matrices are calculated.
