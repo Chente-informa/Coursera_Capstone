@@ -34,12 +34,9 @@ To optimize the training of the model, firstly, the correlation and variance mat
 The idea is that if variables are correlated, we can only keep one. This simplifies the data but can also make our model more robust since it reduces the impact of certain variables.
 Regarding variance, it is an indicator of the dispersion of the values of a certain variable. If it is low for a given variable, it will mean that the impact of this variable is negligible. Removing it allows us to gain in efficiency.
 
-features = ['catu','sexe','trajet','secu',
-            'catv','an_nais','mois',
-            'occutc','obs','obsm','choc','manv',
-            'lum','agg','int','atm','col','gps',
-            'catr','circ','vosp','prof','plan',
-            'surf','infra','situ','hrmn','geo']
+features = ['mois', 'lum', 'int', 'atm', 'catr', 'circ', 'nbv','vosp', 'prof', 'plan', 'surf',
+                'situ', 'catu', 'trajet', 'catv', 'dayofweek', 'geo'] in categories to encode in one-hot
+ and "an_nais" for age of person and "jour" for day of the month
 
 ### 2.4 Normalization
 One-Hot encoding is chosen for categorical features with vectors composed of 0 everywhere and a 1 at the i -th modality using get_dummies from Pandas
