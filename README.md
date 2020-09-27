@@ -1,5 +1,5 @@
 # Predicting the severity of car accident
-                  September 22, 2020 
+                  September 27, 2020 
  
 ## 1. Introduction 
 
@@ -17,8 +17,11 @@ The French road safety body needs a system to assess the risk of an accident bas
 
 ### 2.1 Data sources
 In France, data are shared in data.gouv.fr (FRANCE official open data).
+
 https://www.data.gouv.fr/en/datasets/base-de-donnees-accidents-corporels-de-la-circulation/
+
 Between 2016 and 2017, we are more than 120 000 accident cases.
+
 ##### Target prediction
 There is characteristic information about accidents, locations, vehicles involved and victims.
 Accident severity is provided on 4 levels, which are unbalanced. Except that for our objective of preventing any accident with bodily impact, we can group the values 2, 3 and 4 in serious severity (death and injury) and 1 in material severity and data are correctly balanced.
@@ -36,10 +39,13 @@ Regarding variance, it is an indicator of the dispersion of the values of a cert
 
 features = ['mois', 'lum', 'int', 'atm', 'catr', 'circ', 'nbv','vosp', 'prof', 'plan', 'surf',
                 'situ', 'catu', 'trajet', 'catv', 'dayofweek', 'geo'] in categories to encode in one-hot
- and "an_nais" for age of person and "jour" for day of the month
+
+and "an_nais" for age of person and "jour" for day of the month
 
 ### 2.4 Normalization
 One-Hot encoding is chosen for categorical features with vectors composed of 0 everywhere and a 1 at the i -th modality using get_dummies from Pandas
 
 ### 2.5 Last balance adjustement
 Checking the distribution of the target value of severity, we adjust the training set to stay balanced.
+
+
